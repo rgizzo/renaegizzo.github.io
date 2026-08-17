@@ -1,0 +1,598 @@
+/* =========================
+   GLOBAL
+   ========================= */
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fdf3d8;
+}
+
+body {
+  position: relative;
+}
+
+.homepage {
+  position: relative;
+  width: min(100vw, calc(100vh * (1280 / 1080)));
+  aspect-ratio: 1280 / 1080;
+  margin: 0 auto;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.homepage img {
+  position: absolute;
+}
+
+.page-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  object-fit: cover;
+
+  opacity: 0.9;
+  pointer-events: none;
+
+  z-index: 999;
+}
+
+.issue-tag {
+  position: absolute;
+
+  left: 3%;
+  top: 3%;
+
+  width: 300px;
+
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.14em;
+  line-height: 1.5;
+  text-transform: uppercase;
+
+  z-index: 50;
+}
+
+.issue-line {
+  position: absolute;
+  left: 3%;
+  width: 94%;
+  height: 1px;
+  background: black;
+
+  z-index: 50;
+}
+
+.issue-line-top {
+  top: 2%;
+}
+
+.issue-line-bottom {
+  top: 5%;
+}
+.issue-text {
+  padding: 5px 0;
+}
+
+/* =========================
+   HOMEPAGE
+   ========================= */
+
+.earth-rectangle {
+  width: 11.25%;
+  left: 0.55%;
+  top: 30.83%;
+  z-index: 2;
+}
+
+.earth {
+  width: 18.59%;
+  left: 8.13%;
+  top: 44.44%;
+}
+
+.earth-line {
+  width: 18.59%;
+  left: 7.42%;
+  top: 33.7%;
+}
+
+.name {
+  width: 52.8%;
+  left: 22.42%;
+  top: 9.41%;
+}
+
+.group-lines {
+  width: 37.5%;
+  left: 14.3%;
+  top: 31.85%;
+}
+
+.name-line {
+  width: 57.89%;
+  left: 42.11%;
+  top: 15.96%;
+}
+
+.link-bar {
+  width: 94.53%;
+  left: 2.97%;
+  top: 95%;
+}
+
+.right-plane {
+  width: 43.0%;
+  left: 38.91%;
+  top: 68.43%;
+}
+
+.left-plane {
+  width: 10.73%;
+  left: 38.36%;
+  top: 68.61%;
+}
+
+.clouds {
+  width: 34.53%;
+  left: 47.81%;
+  top: 70.93%;
+  z-index: 1;
+}
+
+.grid {
+  width: 36.17%;
+  left: 47.73%;
+  top: 57.69%;
+  z-index: 2;
+}
+
+.rectangle-behind-me {
+  width: 8.05%;
+  left: 72.81%;
+  top: 37.59%;
+  z-index: 5;
+}
+.mountains-left {
+  width: 21.48%;
+  left: 60.7%;
+  top: 57.13%;
+  z-index: 3;
+}
+
+.mountains-right {
+  width: 14.38%;
+  left: 78.2%;
+  top: 52.31%;
+  z-index: 4;
+}
+
+.satellite-line {
+  width: 33.58%;
+  left: 8.97%;
+  top: 15.96%;
+  z-index: 1;
+}
+
+.topo {
+  width: 6.21%;
+  left: 52.19%;
+  top: 41.62%;
+}
+
+.below-earth {
+  width: 22.97%;
+  left: 0%;
+  top: 81.39%;
+}
+
+.metadata {
+  position: absolute;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  opacity: 0.7;
+  width: 220px;
+  white-space: nowrap;
+}
+
+.satellite-wrapper {
+  position: absolute;
+  width: 10.73%;
+  left: 2.97%;
+  top: 37.41%;
+  z-index: 8;
+}
+
+.satellite-wrapper .satellite {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+.satellite-meta {
+  position: absolute;
+  top: -35px;
+  left: 0px;
+  z-index: 30;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.satellite-wrapper:hover .satellite-meta {
+  opacity: 0.7;
+}
+
+.plane-wrapper {
+  position: absolute;
+  width: 9.84%;
+  left: 31.95%;
+  top: 63.89%;
+  z-index: 8;
+}
+
+.plane-wrapper .plane {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+.plane-meta {
+  top: 100%;
+  left: -10%;
+  z-index: 30;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.plane-wrapper:hover .plane-meta {
+  opacity: 0.7;
+}
+
+.me-wrapper {
+  position: absolute;
+  width: 10.39%;
+  left: 71.29%;
+  top: 56.25%;
+  z-index: 6;
+}
+
+.me-wrapper .me {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+.me-meta {
+  position: absolute;
+  left: -60%;
+  top: -45%;
+
+  z-index: 30;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.me-wrapper:hover .me-meta {
+  opacity: 0.7;
+}
+
+.site-nav {
+  position: absolute;
+  left: 2.97%;
+  top: 95%;
+  width: 94.53%;
+  height: 3.5%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 10;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: lowercase;
+}
+
+.site-nav a {
+  color: black;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+.site-nav a:hover {
+  opacity: 0.6;
+}
+
+.index-status {
+  position: absolute;
+  left: 85%;
+  top: 85%;
+
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+
+  z-index: 20;
+}
+#index-percent {
+  display: inline-block;
+  width: 3em;
+  margin-left: 0.4em;
+}
+
+#index-state {
+  margin-bottom: 0.5em;
+}
+
+.rotating-meta {
+  position: absolute;
+  left: 52%;
+  top: 30%;
+
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+
+  opacity: 0.7;
+  z-index: 20;
+  transition: none;
+}
+
+
+/* =========================
+   ABOUT
+   ========================= */
+
+.about-page {
+  position: relative;
+
+  width: min(100vw, calc(100vh * (1280 / 1080)));
+  aspect-ratio: 1280 / 1080;
+
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.about-page img {
+  position: absolute;
+}
+
+
+.about-tagline {
+  position: absolute;
+
+  left: 15%;
+  top: 16%;
+
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 500;
+  line-height: 2.0;
+
+  z-index: 5;
+}
+
+.about-headshot {
+  position: absolute;
+
+  width: 18%;
+  left: 61.8%;
+  top: 15%;
+
+  z-index: 3;
+}
+
+.about-earth {
+  position: absolute;
+
+  width: 6%;
+  left: 78%;
+  top: 35%;
+
+  z-index: 3;
+}
+
+.about-name {
+  position: absolute;
+
+  width: 20%;
+  left: 60%;
+  top: 38%;
+
+  z-index: 3;
+}
+
+.about-satellite-wrapper {
+  position: absolute;
+
+  width: 12%;
+  left: 37%;
+  top: 20%;
+
+  z-index: 4;
+
+  will-change: transform;
+}
+
+.about-satellite {
+  position: relative !important;
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  left: 0;
+  top: 0;
+
+  pointer-events: none;
+}
+
+.signal-pulse {
+  position: absolute;
+  left: 80%;
+  top: 6.8%;
+
+  width: 1px;
+  height: 1px;
+
+  transform: rotate(290deg);
+
+  pointer-events: none;
+}
+
+.pulse-dot {
+  position: absolute;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+  background: #ff6500;
+
+  opacity: 0;
+}
+
+@keyframes laser-fire {
+  0% {
+    transform: rotate(18deg) scaleX(0);
+    opacity: 0;
+  }
+
+  20% {
+    transform: rotate(18deg) scaleX(1);
+    opacity: 1;
+  }
+
+  70% {
+    transform: rotate(18deg) scaleX(1);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: rotate(18deg) scaleX(0);
+    opacity: 0;
+  }
+}
+
+.dot-1 {
+  --x: 65px;
+  --y: 30px;
+  animation: pulse-dot 2.4s infinite;
+}
+
+.dot-2 {
+  --x: 85px;
+  --y: 42px;
+  animation: pulse-dot 2.4s 0.35s infinite;
+}
+
+.dot-3 {
+  --x: 105px;
+  --y: 55px;
+  animation: pulse-dot 2.4s 0.7s infinite;
+}
+
+@keyframes pulse-dot {
+  0% {
+    transform: translate(0, 0) scale(0.7);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: translate(var(--x), var(--y)) scale(0.2);
+    opacity: 0;
+  }
+}
+
+.about-bio {
+  position: absolute;
+
+  width: 68%;
+  left: 16%;
+  top: 43%;
+
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1.0rem;
+  line-height: 1.45;
+  letter-spacing: 0.025em;
+
+  z-index: 5;
+}
+
+.github {
+  position: absolute;
+  width: 20%;
+  left: 54%;
+  top: 30%;
+  z-index: 3;
+}
+
+.linkedin {
+  position: absolute;
+
+  width: 20%;
+  left: 58%;
+  top: 34%;
+}
+
+.github a,
+.linkedin a {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.0rem;
+  letter-spacing: 0.15em;
+  text-transform: lowercase;
+
+  color: #ff6500;
+  text-decoration: none;
+
+  z-index: 3;
+}
+
+.link-bar {
+  width: 94.53%;
+  left: 2.97%;
+  top: 95%;
+}
+
+.github a:hover {
+  text-decoration: line-through;
+}
+
+.linkedin a:hover {
+  text-decoration: line-through;
+}
+
+
