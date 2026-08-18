@@ -465,9 +465,9 @@ body::after {
 .about-name {
   position: absolute;
 
-  width: 20%;
-  left: 60%;
-  top: 33%;
+  width: 19%;
+  left: 61%;
+  top: 32%;
 
   z-index: 3;
 }
