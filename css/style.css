@@ -396,29 +396,6 @@ body::after {
   overflow: hidden;
 }
 
-.about-page .site-nav {
-  top: auto;
-  bottom: 1.5%;
-}
-
-.about-page .link-bar {
-  top: auto;
-  bottom: 1.5%;
-}
-
-@media (max-width: 800px) {
-  .about-page {
-    height: 1250px;
-    max-height: none;
-  }
-}
-
-@media (max-width: 600px) {
-  .about-page {
-    height: 1450px;
-  }
-}
-
 .about-page img {
   position: absolute;
 }
