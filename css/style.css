@@ -17,7 +17,12 @@ body {
 body::after {
   content: "";
   position: fixed;
-  inset: 0;
+
+  left: -10vw;
+  top: -10vh;
+
+  width: 120vw;
+  height: 120vh;
 
   background-image: url("../assets/textures/noise_layer.png");
   background-size: cover;
@@ -29,30 +34,31 @@ body::after {
   pointer-events: none;
   z-index: 99999;
 
-  animation: noise-shift 0.9s steps(1) infinite;
+  animation: noise-shift 0.35s steps(1) infinite;
 }
 
 @keyframes noise-shift {
   0% {
-    transform: scale(1.1) scaleX(1);
+    transform: translate(0, 0) scaleX(1);
   }
 
   25% {
-    transform: scale(1.1) scaleX(-1);
+    transform: translate(-2vw, 1vh) scaleX(-1);
   }
 
   50% {
-    transform: scale(1.1) scaleY(-1);
+    transform: translate(1vw, -2vh) scaleY(-1);
   }
 
   75% {
-    transform: scale(1.1) scale(-1, -1);
+    transform: translate(-1vw, 2vh) scale(-1, -1);
   }
 
   100% {
-    transform: scale(1.1) scaleX(1);
+    transform: translate(0, 0) scaleX(1);
   }
 }
+
 .homepage {
   position: relative;
   width: min(100vw, calc(100vh * (1280 / 1080)));
