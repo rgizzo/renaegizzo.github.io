@@ -66,6 +66,7 @@ body::after {
   margin: 0 auto;
   overflow: hidden;
   z-index: 1;
+  font-size: clamp(12px, min(1.25vw, 1.48vh), 16px);
 }
 
 .homepage img {
@@ -90,7 +91,7 @@ body::after {
   width: 300px;
 
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.55rem;
+  font-size: 0.55em;
   letter-spacing: 0.14em;
   line-height: 1.5;
   text-transform: uppercase;
@@ -234,7 +235,7 @@ body::after {
 .metadata {
   position: absolute;
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.65em;
   letter-spacing: 0.08em;
   line-height: 1.4;
   opacity: 0.7;
@@ -346,7 +347,7 @@ body::after {
   align-items: center;
   z-index: 10;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.95rem;
+  font-size: 0.95em;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: lowercase;
@@ -367,7 +368,7 @@ body::after {
   top: 85%;
 
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.65em;
   letter-spacing: 0.08em;
 
   z-index: 20;
@@ -388,7 +389,7 @@ body::after {
   top: 30%;
 
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.65em;
   letter-spacing: 0.08em;
   line-height: 1.4;
 
@@ -410,6 +411,7 @@ body::after {
 
   margin: 0 auto;
   overflow: hidden;
+  font-size: clamp(12px, min(1.25vw, 1.48vh), 16px);
 }
 
 .about-page img {
@@ -424,7 +426,7 @@ body::after {
   top: 11%;
 
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 2.2rem;
+  font-size: 2.2em;
   font-weight: 500;
   line-height: 2.0;
 
@@ -586,7 +588,7 @@ body::after {
   top: 40%;
 
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 1.0rem;
+  font-size: 1.0em;
   line-height: 1.45;
   letter-spacing: 0.025em;
 
@@ -612,7 +614,7 @@ body::after {
 .github a,
 .linkedin a {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.0rem;
+  font-size: 1.0em;
   letter-spacing: 0.15em;
   text-transform: lowercase;
 
