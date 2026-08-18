@@ -405,7 +405,7 @@ body::after {
   left: 15%;
   top: 11%;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 2.2rem;
+  font-size: clamp(1.2rem, 2.75vw, 2.2rem);
   font-weight: 500;
   line-height: 2.0;
   z-index: 5;
@@ -541,7 +541,7 @@ body::after {
   position: absolute;
   width: 70%;
   left: 16%;
-  top: 40%;
+  top: 45%;
 
   height: 42%;
   overflow-y: auto;
