@@ -55,7 +55,8 @@ body::after {
 
 .homepage {
   position: relative;
-  width: min(100vw, calc(100vh * (1280 / 1080)));
+  width: 100%;
+  max-width: 1280px;
   aspect-ratio: 1280 / 1080;
   margin: 0 auto;
   overflow: hidden;
@@ -386,23 +387,23 @@ body::after {
    ABOUT
    ========================= */
 
-.about-scroll {
-  width: 100%;
-  min-height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
 .about-page {
   position: relative;
-
   width: 100%;
   max-width: 1280px;
-
-  min-height: 1080px;
-
+  aspect-ratio: 1280 / 1080;
   margin: 0 auto;
-  overflow: visible;
+  overflow: hidden;
+}
+
+.about-page .site-nav {
+  top: auto;
+  bottom: 1.5%;
+}
+
+.about-page .link-bar {
+  top: auto;
+  bottom: 1.5%;
 }
 
 @media (max-width: 800px) {
@@ -561,14 +562,36 @@ body::after {
 
 .about-bio {
   position: absolute;
-  width: 68%;
+  width: 70%;
   left: 16%;
   top: 40%;
+
+  height: 42%;
+  overflow-y: auto;
+  overflow-x: hidden;
+
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 1.0rem;
+  font-size: 1rem;
   line-height: 1.45;
   letter-spacing: 0.025em;
   z-index: 5;
+}
+
+.about-bio {
+  scrollbar-width: thin;
+  scrollbar-color: #ff6500 transparent;
+}
+
+.about-bio::-webkit-scrollbar {
+  width: 4px;
+}
+
+.about-bio::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.about-bio::-webkit-scrollbar-thumb {
+  background: #ff6500;
 }
 
 .github {
